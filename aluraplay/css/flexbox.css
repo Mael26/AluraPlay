@@ -21,13 +21,89 @@
 /* Panel lateral */
 .menu__container{
     position: fixed;
+    width: 239px;
+    left: 0;
+    bottom: 0;
+    top: 80px;
+    overflow: scroll;
 }
+.menu__lista{
+    display: flex;
+    flex-direction: column;
+    height: auto;
+    gap: 15px;
+    padding: 20px 17px 20px 15px;
+    }
+    .menu__itens{
+        display: flex;
+        flex-direction: row;
+        gap: 15px;
+        align-items: center;
+    }
+    .menu__lista:nth-child(3){
+        flex-direction: column-reverse;
+    }
+    .videojuegos{
+        order: 3;
+    }
+    .peliculas{
+        order: 2;
+    }
+    .premium{
+        order: 1
+    }
+
+    /* Videos */
+    .videos__container{
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: space-evenly;
+        align-items: center;
+        gap: 15px;
+    }
+    .videos__item{
+
+    }
+    .descripcion-video{
+        display: flex;
+        gap: 10px; 
+        align-items: start;
+    }
+    .detalles__video{
+        display: flex;
+        flex-direction: column;
+        gap: 25px;
+        padding-top: 10px;
+    }
+
 
 .rodapie__container{
     display: flex;
     flex-flow: column wrap;
     /* justify-content: space-between; */
 }
+
+@media (max-width:1440px){
+    /* Panel lateral */
+    .menu__container{
+        left: 0;
+        bottom: 0;
+        top: 80px;
+        width: 74px;
+    }
+    .menu__lista{
+        justify-content: space-around;
+        height: 100%;
+        }
+    .menu__lista:nth-child(n+2){
+        display: none;
+    }
+    .menu__itens{
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+    }
+    }
 
 @media (max-width:834px){
 
@@ -43,27 +119,16 @@
 
     /* Panel Inferior */
     .menu__container{
+        top: auto;
         position: fixed;
-        bottom: 0%;
+        bottom: 0;
         height: 75px;
         width: 100%;
     }
     .menu__lista{
-        display: flex;
+        flex-direction: row;
         justify-content: space-around;    
         align-items: center;
         height: 100%;
     }
-    .menu__lista:nth-child(n+2) {
-        display: none;
-    }
-    .menu__lista li{
-        align-self: center;
-    }
-    .menu__itens{
-        display: flex;
-        flex-direction: column;
-        gap: 5px
-    }
-
 }
